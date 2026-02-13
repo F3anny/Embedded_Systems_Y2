@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+
+:root {
+    --primary: #2563eb;
+    --primary-dark: #1e40af;
+    --bg: #f4f6fb;
+    --sidebar-bg: #111827;
+    --card-bg: #ffffff;
+    --text: #111827;
+    --muted: #6b7280;
+    --border: #e5e7eb;
+    --radius: 12px;
+    --shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+}
+
+/* Layout */
+.dashboard {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 240px;
+    background: var(--sidebar-bg);
+    color: white;
+    padding: 30px 20px;
+}
+
+.logo {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 40px;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar li {
+    padding: 12px 10px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.2s;
+    font-size: 0.95rem;
+}
+
+.sidebar li:hover,
+.sidebar li.active {
+    background: var(--primary);
+}
+
+/* Main */
+.main {
+    flex: 1;
+    padding: 30px 40px;
+}
+
+/* Topbar */
+.topbar h1 {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+/* Top-Up Section */
+.topup-section {
+    margin-bottom: 40px;
+}
+
+.topup-card {
+    background: var(--card-bg);
+    padding: 25px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.topup-card h2 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.topup-card input {
+    padding: 12px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: 0.2s;
+}
+
+.topup-card input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.topup-card button {
+    padding: 12px;
+    background: var(--primary);
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.topup-card button:hover {
+    background: var(--primary-dark);
+}
+
+/* Table Section */
+.table-section {
+    margin-top: 20px;
+}
+
+.table-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.table-header h2 {
+    font-size: 1.2rem;
+}
+
+.live-indicator {
+    color: #16a34a;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* Table */
+.table-wrapper {
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+}
+
+#balances {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#balances thead {
+    background: #f3f4f6;
+}
+
+#balances th {
+    text-align: left;
+    padding: 16px;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--muted);
+}
+
+#balances td {
+    padding: 18px 16px;
+    border-top: 1px solid var(--border);
+    font-weight: 500;
+}
+
+#balances tbody tr:hover {
+    background: #f9fafb;
+}
+
+/* Highlight animation */
+.highlight {
+    animation: highlightFade 1s ease;
+}
+
+@keyframes highlightFade {
+    0% { background-color: #dbeafe; }
+    100% { background-color: transparent; }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .sidebar {
+        display: none;
+    }
+
+    .main {
+        padding: 20px;
+    }
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RFID Top-Up Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="dashboard">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="logo">RFID Admin</div>
+
+        <nav>
+            <ul>
+                <li class="active">Dashboard</li>
+                <li>Transactions</li>
+                <li>Cards</li>
+                <li>Reports</li>
+                <li>Settings</li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main">
+
+        <header class="topbar">
+            <h1>Top-Up Management System</h1>
+        </header>
+
+        <!-- Top-Up Form -->
+        <section class="topup-section">
+            <div class="topup-card">
+                <h2>Top-Up Card</h2>
+                <input type="text" id="uid" placeholder="Enter Card UID">
+                <input type="number" id="amount" placeholder="Enter Amount">
+                <button id="topup-btn">Add Balance</button>
+            </div>
+        </section>
+
+        <!-- Balance Table -->
+        <section class="table-section">
+            <div class="table-header">
+                <h2>Card Balances</h2>
+                <span class="live-indicator">● Live Updates</span>
+            </div>
+
+            <div class="table-wrapper">
+                <table id="balances">
+                    <thead>
+                        <tr>
+                            <th>Card UID</th>
+                            <th>Current Balance</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- JS will insert rows here -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
